@@ -25,10 +25,14 @@ class Tokenizer:
             json_obj.close()
         except FileNotFoundError:
             print("File not found. Please try again.")
+        except ValueError:
+            print(self.file)
+        except etree.ParserError:
+            print(self.file)
         
         return to_return
 
-    def computeWordFrequencies(tokens) -> {str:int}:
+    def computeWordFrequencies(self, tokens) -> {str:int}:
         to_return = {}
         already_done = set()
         for token in tokens:
