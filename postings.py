@@ -1,4 +1,3 @@
-
 class Posting:
     doc_id = 0
     freq = 0

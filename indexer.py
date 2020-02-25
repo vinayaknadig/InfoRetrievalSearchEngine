@@ -20,13 +20,16 @@ def main():
                     token_postings[token].append(Posting(count, token_freq[token], 0))
                 count += 1
     
-    with open("output.txt", "w") as file_to_write:
+    with open("token_posting_list.txt", "w") as file_to_write:
         for token, post_list in token_postings.items():
             file_to_write.write(token)
             for post in post_list:
                 file_to_write.write(" " + str(post.getDocId()) + "," + str(post.getFreq()))
             file_to_write.write("\n")
 
+    with open("doc_id_list.txt", "w") as doc_id_file:
+        for id, url in doc_id_dict.items():
+            doc_id_file.write(str(id) + " " + str(file) + "\n")
 
 
 if __name__ == '__main__':
