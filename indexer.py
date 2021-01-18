@@ -48,7 +48,7 @@ def main():
 
     openfiles = dict()
     for i in range(partialnum):
-        filename = "partial" + str(i) + '.txt'
+        filename = r"Partial Indices/partial" + str(i) + '.txt'
         openfiles[i] = open(filename, "r")
     
     past_word = ""
